@@ -1,20 +1,15 @@
-//Función que me aplica el estilo a la opciòn seleccionada y quita la previamente seleccionada
+// Función que cambia las clases cuando se hace clic en un enlace de navegación
 function seleccionar(link) {
-    var opciones = document.querySelectorAll('#links  a');
-    opciones[0].className = "";
-    opciones[1].className = "";
-    opciones[2].className = "";
-    opciones[3].className = "";
-    opciones[4].className = "";
-    link.className = "seleccionado";
+    var opciones = document.querySelectorAll('#links a');
+    opciones.forEach(opcion => opcion.classList.remove("seleccionado"));
+    link.classList.add("seleccionado");
 
-    //Hacemos desaparecer el menu una vez que se ha seleccionado una opcion
-    //en modo responsive
+    // Hacemos desaparecer el menú una vez que se ha seleccionado una opción en modo responsive
     var x = document.getElementById("nav");
     x.className = "";
 }
 
-//función que muestra el menu responsive
+// Función que muestra el menú responsive
 function responsiveMenu() {
     var x = document.getElementById("nav");
     if (x.className === "") {
@@ -24,10 +19,13 @@ function responsiveMenu() {
     }
 }
 
-//detecto el scrolling para aplicar la animación del la barra de habilidades
-window.onscroll = function() { efectoHabilidades() };
+// Detecto el desplazamiento para aplicar la animación de la barra de habilidades y cambiar las clases de navegación
+window.onscroll = function() {
+    efectoHabilidades();
+    actualizarNavegacion();
+};
 
-//funcion que aplica la animación de la barra de habilidades
+// Función que aplica la animación de la barra de habilidades
 function efectoHabilidades() {
     var skills = document.getElementById("skills");
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
@@ -36,7 +34,19 @@ function efectoHabilidades() {
         document.getElementById("js").classList.add("barra-progreso2");
         document.getElementById("bd").classList.add("barra-progreso3");
         document.getElementById("ps").classList.add("barra-progreso4");
-        document.getElementById("Rc").classList.add("barra-progreso5");
     }
+}
 
+// Función que actualiza las clases de navegación al desplazarse
+function actualizarNavegacion() {
+    var secciones = document.querySelectorAll('section');
+    var opciones = document.querySelectorAll('#links a');
+
+    secciones.forEach((seccion, index) => {
+        var rect = seccion.getBoundingClientRect();
+        if (rect.top <= 50 && rect.bottom >= 50) {
+            opciones.forEach(opcion => opcion.classList.remove("seleccionado"));
+            opciones[index].classList.add("seleccionado");
+        }
+    });
 }
