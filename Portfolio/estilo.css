@@ -453,7 +453,6 @@ html {
 /* *********************/
 /* seccion C O N T A C T O */
 /* *********************/
-
 #contacto {
     padding: 80px 15px;
     background-color: #f9f9f9;
@@ -470,6 +469,19 @@ html {
     font-size: 18px;
     margin-bottom: 15px;
     color: #555;
+}
+
+.informacion-contacto p span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none !important;
+}
+#contacto .informacion-contacto a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Utiliza el color heredado (negro por defecto) */
+    cursor: text; /* Cambia el cursor al estilo de texto normal */
 }
 /* *********************/
 /* seccion F O O T E R */
