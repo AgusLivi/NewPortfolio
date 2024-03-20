@@ -218,15 +218,19 @@ html {
 #servicios {
     padding: 100px 15px;
     text-align: center;
-    background-color: #f3f3f3;
+    background: linear-gradient( #eb5a5acc, rgba(33, 16, 16, 0.8)), url("img/fondo-skills.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 #servicios .titulo-seccion {
     text-align: center;
     font-size: 22px;
     text-transform: uppercase;
-    color: #111135;
-    text-decoration: underline;
+    color: #f6f6f6;
+    text-decoration: none;
     text-decoration-color: #d3d3d3;
     text-decoration-thickness: 5px;
 }
@@ -500,7 +504,30 @@ footer a {
     display: inline-block;
     margin: 5px;
     font-size: 26px;
+}  
+
+.informacion-contacto {
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
 }
+
+.contact-link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    margin-top: 20px; 
+    cursor: default;
+}
+.contact-image {
+    max-width: 50px;
+    cursor: pointer;
+}
+.contact-icon {
+    max-width: 50px;
+}
+
 /* *********************/
 /* seccion R E S P O N S I V E */
 /* *********************/
@@ -589,4 +616,5 @@ footer a {
         width: 100%;
         margin-bottom: 15px;
     }
+
 }
